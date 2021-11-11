@@ -1,0 +1,23 @@
+<%- include("../templates/header", {title:"FINAL 1"}) %>
+
+<div class="form-check">
+  <input class="form-check-input user" type="radio" name="flexRadioDefault" />
+  <label class="form-check-label" for="user"> Catango </label>
+</div>
+<div class="form-check">
+  <input
+    class="form-check-input admin"
+    type="radio"
+    name="flexRadioDefault"
+    checked
+  />
+  <label class="form-check-label" for="admin"> Administrador </label>
+</div>
+<button type="button" class="btn btn-warning" id="AgregarArt">
+  Agregar Articulo
+</button>
+
+<div id="injectedProducts" class="container"></div>
+<div id="injectedCart"></div>
+
+<%- include("../templates/footer") %>

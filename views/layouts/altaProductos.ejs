@@ -1,0 +1,36 @@
+<%- include("../templates/header", {title:"FINAL 1"}) %>
+<h2>ALTA DE PRODUCTOS</h2>
+
+<form id="formProducts">
+  <label for="nameProd">Nombre</label>
+  <input type="text" id="nameProd" name="name" /><br />
+
+  <label for="descProd">Price</label>
+  <input type="text" id="descProd" name="description" /><br />
+
+  <label for="codeProd">Foto URL</label>
+  <input type="text" id="codeProd" name="code" /><br />
+
+  <label for="thumbProd">Foto URL</label>
+  <input type="text" id="thumbProd" name="thumbnail" /><br />
+
+  <label for="priceProd">Foto URL</label>
+  <input type="text" id="priceProd" name="price" /><br />
+
+  <label for="stockProd">Foto URL</label>
+  <input type="text" id="stockProd" name="stock" /><br />
+
+  <input type="submit" id="sendData" value="Enviar!" />
+</form>
+
+<h2>VISTA DE PRODUCTOS</h2>
+<%- include("../templates/table", {noProductos:true, responseObjectTotal:[{}]})
+%>
+<h2>CONTRO DE MENSAJES</h2>
+<form id="formularioEnvioMensajes">
+  <input type="text" placeholder="direccion de email" name="email" required />
+  <input type="text" placeholder="Su calido mensaje" name="message" />
+  <input type="submit" value="Enviar!" />
+</form>
+<%- include("../templates/messageCenter", {noMensajes:true,
+responseObject:[{}]}) %><%- include("../templates/footer") %>

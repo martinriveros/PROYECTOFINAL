@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "timeStamp": 2234234,
+    "name": "yegua",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.6,
+    "stock": 1
+  },
+  {
+    "id": 2,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 3,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 4,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 5,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 6,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 7,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 8,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 9,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 10,
+    "timeStamp": 2234234,
+    "name": "gato",
+    "description": "ex presidente",
+    "code": "loser",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  },
+  {
+    "id": 11,
+    "timeStamp": 2234234,
+    "name": "perro",
+    "description": "mascot",
+    "code": "winner",
+    "thumbnail": "nones",
+    "price": 0.8,
+    "stock": 3
+  }
+]

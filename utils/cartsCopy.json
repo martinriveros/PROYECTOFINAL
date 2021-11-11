@@ -1,0 +1,51 @@
+[
+  {
+    "id": "localhost:8080",
+    "timeStamp": 1636535540694,
+    "products": [
+      {
+        "id": 11,
+        "timeStamp": 2234234,
+        "name": "perro",
+        "description": "mascot",
+        "code": "winner",
+        "thumbnail": "nones",
+        "price": 0.8,
+        "stock": 3
+      },
+      {
+        "id": 12,
+        "timeStamp": 2234234,
+        "name": "gato",
+        "description": "ex presidente",
+        "code": "loser",
+        "thumbnail": "nones",
+        "price": 0.8,
+        "stock": 3
+      },
+      {
+        "id": 13,
+        "timeStamp": 2234234,
+        "name": "gato",
+        "description": "ex presidente",
+        "code": "loser",
+        "thumbnail": "nones",
+        "price": 0.8,
+        "stock": 3
+      }]},
+{
+    "id": "localhost:8080",
+    "timeStamp": 5465465465465,
+    "products": [
+      {
+        "id": 19,
+        "timeStamp": 2234234,
+        "name": "perro",
+        "description": "mascot",
+        "code": "winner",
+        "thumbnail": "nones",
+        "price": 0.8,
+        "stock": 3
+      }]
+  }
+]

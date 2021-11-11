@@ -1,0 +1,66 @@
+const fs = require('fs');
+const path = require('path');
+
+const _file='../../../utils/carts.json'
+
+class cartsHandler {
+  constructor(_file){
+    this.ruta = path.resolve(__dirname, _file);
+  }
+
+
+
+  async saveCart(cart) {
+    
+    let storedCarts = await this.getAllCarts()
+    storedCarts.push(cart)
+    let allCarts = JSON.stringify(storedCarts, null,2)
+    try {
+      await fs.promises.writeFile(`${this.ruta}`, allCarts, 'utf-8')
+    
+  } catch(error) {
+    console.log('error al escribir el carrito' + error)
+  }}
+
+
+  async getAllCarts() {
+    try{
+      
+      let carts = JSON.parse(await fs.promises.readFile(`${this.ruta}`, 'utf-8'))
+      return carts
+
+    } catch (err){console.log('ERROR AL LEER EN GETALL ' + err)}
+  }
+  
+  async getById(id) {
+      const products = await this.getAll();
+      const product = products.find(element=> element.id===Number(id))
+      if(product===undefined){
+        console.log(null)
+      } else {
+        return product
+      }
+  }
+ 
+  async deleteById(id){
+    
+    const products = await this.getAll(_file);
+    const objectToDelete = products.find((element) => element.id===Number(id))
+    let index = products.indexOf(objectToDelete)
+    products.splice(index,1)
+    await this.writeFile(products)
+    
+
+  }
+  async writeFile(data){
+    let adecuateData = JSON.stringify(data)
+    try {
+      await fs.promises.writeFile(`${this.ruta}`, adecuateData, 'utf-8')
+ 
+    } catch (err) {
+      console.log('error al escribir' + err)
+      }
+      }
+    }
+
+module.exports = new cartsHandler(_file)

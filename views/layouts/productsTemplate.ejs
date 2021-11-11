@@ -1,0 +1,44 @@
+<% dataProductos.forEach(element => { %>
+<div class="card" style="width: 18rem">
+  <img src="<%= element.thumbnail %>" class="card-img-top" alt="missing" />
+  <div class="card-body">
+    <h5 class="card-title">Nombre: <%= element.name %></h5>
+    <p class="card-text">Descripcion: <%= element.description %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Codigo: <%= element.code %></li>
+    <li class="list-group-item">Precio: <%= element.price %></li>
+    <li class="list-group-item">Stock: <%= element.stock %></li>
+    <li class="list-group-item">Id: <%= element.id %></li>
+    <li class="list-group-item">Timestamp: <%= element.timeStamp %></li>
+  </ul>
+  <div class="card-body">
+    <button
+      type="button"
+      class="btn btn-info eliminarArt"
+      onclick="elimiarArticulo(`<%= element.id %>`)"
+    >
+      Eliminar Art
+    </button>
+    <button type="button" class="btn btn-light editarArt">Editar Art</button>
+    <button
+      type="button"
+      class="btn btn-dark verArt"
+      onclick="verArticulo(`<%= element.id %>`)"
+    >
+      Ver Articulo
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      onclick="agregarAlCarrito(`<%= element.id %>`)"
+    >
+      Agregar al Carrito
+    </button>
+    <button type="button" class="btn btn-success eliminarCart">
+      Eliminar del carrito
+    </button>
+    <button type="button" class="btn btn-primary verCart">Ver carrito</button>
+  </div>
+</div>
+<% }); %>
