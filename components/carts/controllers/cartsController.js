@@ -9,80 +9,61 @@ class cartsController {
             await cartsHandler.saveCart(newCart)
             res.send(`${newCart.id}-${newCart.timeStamp}`)
         }
+        async getAllCarts(req, res){
+            let carts = await cartsHandler.getAllCarts()
+            res.json(carts)
+        }
 
         async deleteCart(req, res){
             let carts = await cartsHandler.getAllCarts();
-            console.log(carts)
             const cartToDelete = carts.find( cart => {
                 cart.id===req.headers.host && cart.timeStamp === Number(req.body.timeStamp)
                 })
             let index = products.indexOf(cartToDelete)
             carts.splice(index,1)
-            console.log(carts)
             await cartsHandler.writeCarts(carts)
-            res.send(carts)
+            res.json(carts)
         }
         async getAllProductsFromCart(req, res){
-            let carts = await cartsHandler.getAllCarts();
-            console.log(carts)
             
-            // let cart = carts.find( cart => {
-
-            //     cart.products.forEach(product=>
-            //         if)
-            //     cart.timeStamp===Number(req.body.timeStamp)
-                // console.log( cart.timeStamp)
-                // console.log( Number(req.body.timeStamp))
-                // })
-
-        }
-        async addToCart(req, res){
             let carts = await cartsHandler.getAllCarts();
-            let productToAdd = await productsHandlers.getById(req.params.id)
+            let cart = carts.find( cart => 
+                cart.timeStamp==Number(req.params.id)
+            );
+             
+            res.json(cart.products)
+            return cart.products
+        }
+
+        async addToCart(req, res){
+            
+            let carts = await cartsHandler.getAllCarts();
+            let cart = carts.find( cart => 
+                cart.timeStamp==Number(req.params.id)
+            );
+            
+            let productToAdd = await productsHandlers.getById(req.params.id_prod)
             console.log(carts)
             console.log(productToAdd)
-
-
         }
 
-
-
-    // async verifyCartExistance(req, res){
-        
-    //     let allCarts = await cartsHandler.getAllCarts();
-    //     let productToAdd = await productsHandler.getById(req.params.id)
-
-    //     for (let cart of allCarts){
-       
-    //         if  (cart.id===req.headers.host && cart.timeStamp === Number(req.body.timeStamp))
-    //             {
-    //             for (let product of cart.products){
-    //                 if(productToAdd.id===Number(product.id)){
-    //                     break
-    //                 }else{
-    //                     cart.products.push(productToAdd)
-    //                     break   
-    //                 }
-                    
-    //         }         
+        async deleteProductFromCart(req, res){
+            let carts = await cartsHandler.getAllCarts()
+            console.log(carts)
             
+            let cartToDeleteProduct = carts.find(cart=>
+                cart.timeStamp===Number(req.params.id))
+            let indexCart = carts.indexOf(cartToDeleteProduct)
             
-    //         } else {
-    //             allCarts.push({id: req.headers.host, timeStamp: Number(req.body.timeStamp), products:[productToAdd]})
-    //             break          
-    //         }}
-            
-    //         await cartsHandler.saveCart(allCarts)
-    //         return req.headers.host
-       
-    // }
-
-    async getAllCarts(req, res, next){
-        try {
-            let data = await cartsHandler.getAll();
-            res.json(data);
-        } catch (error) {
-            next(error);
-        }}}
-
+            cartToDeleteProduct.products.forEach(product=>
+                {if(product.id===req.params.id_prod){
+                    cartToDeleteProduct.products.indexOf(product)
+                    cartToDeleteProduct.products.splice(indexProd,1)}
+                
+                })
+            carts[indexCart] = await productsHandlers.getById(req.params.id_prod)
+            await cartsHandler.writeCarts(carts)
+            console.log(carts)
+        }
+        }
 module.exports = new cartsController()

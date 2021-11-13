@@ -11,7 +11,8 @@ module.exports = (app) =>{
     app.delete("/api/carrito/:id", cartsController.deleteCart)     
     app.get("/api/carrito/:id/productos", cartsController.getAllProductsFromCart);             // ver un cart
     app.post("/api/carrito/:id/productos", cartsController.addToCart);
-    // app.delete("api/carrito/:id/productos/:id_prod", cartsController.deleteProdFromCart)
+    app.delete("/api/carrito/:id/productos/:id_prod", cartsController.deleteProductFromCart)
+    app.get("/api/carrito", cartsController.getAllCarts)
     
     // app.get("/api/carritoTemplate", cartsController.productsTemplate);
 }
